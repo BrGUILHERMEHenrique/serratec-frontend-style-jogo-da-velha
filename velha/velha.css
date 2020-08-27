@@ -1,0 +1,129 @@
+html, body{ 
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-color: var(--general-bg);
+}
+:root{
+    --general-bg: rgb(18,18,20);
+    --primary-color: rgb(0,128,0);
+    --secundary-color: rgb(0, 91, 0);
+    --font-color: #fff;
+    --outline-color: #eef;
+    --border-color: rgb(6,86,7);
+    --font-family-primary: 'Roboto', sans-serif;
+    --cursor-prefered-type: pointer;
+}
+
+.container{
+    /* 3linhas e 2colunas */
+    height: 100vh;
+    width: 80vh;
+    font-family: var(--font-family-primary);
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr; 
+    grid-template-columns: repeat(3, 1fr); 
+    grid-template-areas: " h  h  b"
+                         "b1 b2 b3"
+                         "b4 b5 b6"
+                         "b7 b8 b9"
+                         " f  f  f";
+
+    grid-gap: 5px;
+    margin: auto;
+}
+header{
+    background-color: none;
+    align-content: space-between;
+    color: var(--font-color);
+    display: block;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    grid-area: h;
+}
+header input{
+    width: 18vw;
+    height: 5vh;
+    margin-left: 15px;
+    margin-bottom: 10px;
+    border: 1px solid;
+    align-self: center;
+    border-color: var(--border-color);
+    background-color: var(--general-bg);
+    color: var(--font-color)
+}
+button.jogar{
+    height: 11vh;
+    margin-top: 6vh;
+    background-color: var(--primary-color);
+    color: var(--font-color);
+    font-size: 700;
+    border: none;
+    grid-area: b;
+}
+div.block{
+    background-color: var(--primary-color);
+}
+button.jogar:hover{
+    background-color: var(--secundary-color);
+    cursor: var(--cursor-prefered-type);
+}
+.fundo-cor{
+    background-color: var(--secundary-color);
+}
+
+div.block:hover{    
+    background-color: var(--secundary-color);
+    cursor: var(--cursor-prefered-type);
+    
+}
+header input:focus{
+    border-color: var(--outline-color);
+    cursor: var(--cursor-prefered-type);
+    outline: none;
+}
+div.block-1{
+    grid-area: b1;
+}
+div.block-2{
+    grid-area: b2;
+
+}
+div.block-3{
+    grid-area: b3;
+
+}
+div.block-4{
+    grid-area: b4;
+
+}
+div.block-5{
+    grid-area: b5;
+
+}
+div.block-6{
+    grid-area: b6;
+
+}
+div.block-7{
+    grid-area: b7;
+
+}
+div.block-8{
+    grid-area: b8;
+
+}
+div.block-9{
+    grid-area: b9;
+
+}
+footer{
+    text-align: center;
+    background-color: var(--general-bg);
+    color: var(--font-color);
+    grid-area: f;
+}
