@@ -21,10 +21,11 @@ html, body{
 .container{
     /* 3linhas e 2colunas */
     height: 100vh;
-    width: 80vh;
-    font-family: var(--font-family-primary);
+    width: 75vh;
+    margin: auto;
+    margin-top: 50px;
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr; 
+    grid-template-rows: repeat(5, 1fr); 
     grid-template-columns: repeat(3, 1fr); 
     grid-template-areas: " h  h  b"
                          "b1 b2 b3"
@@ -33,32 +34,29 @@ html, body{
                          " f  f  f";
 
     grid-gap: 5px;
-    margin: auto;
 }
+
 header{
-    background-color: none;
-    align-content: space-between;
     color: var(--font-color);
-    display: block;
-    align-items: center;
-    justify-content: center;
-    margin-top: 15px;
+
+    align-self: center;
     grid-area: h;
 }
 header input{
-    width: 18vw;
-    height: 5vh;
+    width: 15vw;
+    height: 3vh;
+    max-width: 15vw;
     margin-left: 15px;
     margin-bottom: 10px;
     border: 1px solid;
-    align-self: center;
     border-color: var(--border-color);
     background-color: var(--general-bg);
     color: var(--font-color)
 }
+
 button.jogar{
-    height: 11vh;
-    margin-top: 6vh;
+    height: 9vh;
+    margin-top: 40px;
     background-color: var(--primary-color);
     color: var(--font-color);
     font-size: 700;
@@ -71,9 +69,6 @@ div.block{
 button.jogar:hover{
     background-color: var(--secundary-color);
     cursor: var(--cursor-prefered-type);
-}
-.fundo-cor{
-    background-color: var(--secundary-color);
 }
 
 div.block:hover{    
@@ -122,8 +117,22 @@ div.block-9{
 
 }
 footer{
+    margin-top: 5vh;
     text-align: center;
     background-color: var(--general-bg);
     color: var(--font-color);
     grid-area: f;
+}
+/* Media query para responsividade evitando erros com resolções diferentes */
+@media only screen and (max-width: 1300px){
+    .container{
+        height: 80vh;
+        width: 50vh;
+    }
+    header input{
+        width: 17vw;
+    }
+    button.jogar{
+        height: 6vh;
+    }
 }
